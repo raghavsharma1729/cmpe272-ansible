@@ -1,0 +1,33 @@
+---
+- name: Ansible EC2 instance Launch
+  hosts: localhost
+  remote_user: ec2-user
+  tasks:
+    - name: start an ANS EC2 instance with VM
+      ec2:
+      key_name: Target 1
+      instance_type: t2.micro
+      image: ami-07813cdd2b4eaf5e0
+      wait: ves
+      count: 1
+      instance_tags:
+      Name: Demo
+      pc_subnet_id: subnet-004516e71717309fb
+      assign_public_ip: yes
+      aws_region: us-west-1
+      aws_access_key: AKIAZ76T44UE5F0MQS4M
+      aws_secret_key: NZAr+JomVLJyHLY0JUb/YZu/Dyebx8u9kNxVMDV5
+    - name: start an ANS EC2 instance with VM
+      ec2:
+      key_name: Target 2
+      instance_type: t2.micro
+      image: ami-07813cdd2b4eaf5e0
+      wait: ves
+      count: 1
+      instance_tags:
+      Name: Demo
+      pc_subnet_id: subnet-004516e71717309fb
+      assign_public_ip: yes
+      aws_region: us-west-1
+      aws_access_key: AKIAZ76T44UE5F0MQS4M
+      aws_secret_key: NZAr+JomVLJyHLY0JUb/YZu/Dyebx8u9kNxVMDV5
